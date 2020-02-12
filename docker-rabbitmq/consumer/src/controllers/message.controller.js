@@ -1,6 +1,6 @@
 const amqp = require('amqplib/callback_api');
 
-async function publish(req, res) {
+async function consume(req, res) {
   if (!req.body.message) res.send(415);
 
   const data = '<' + new Date().toLocaleDateString() + '> ' + req.body.message;
@@ -36,5 +36,5 @@ async function publish(req, res) {
 
 
 module.exports = {
-  publish
+  consume
 }

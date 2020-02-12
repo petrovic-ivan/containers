@@ -5,8 +5,8 @@ const messageCtrl = require('../controllers/message.controller');
 
 const router = express.Router();
 
-router.route('/publish')
-  .post(asyncHandler(messageCtrl.publishMessage));
+router.route('/consume')
+  .post(asyncHandler(messageCtrl.consume));
 
 
 module.exports = router;

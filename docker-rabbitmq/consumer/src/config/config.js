@@ -7,7 +7,7 @@ const envVarsSchema = Joi.object({
     .allow(['development', 'production', 'test', 'provision'])
     .default('development'),
   SERVER_PORT: Joi.number()
-    .default(4201),
+    .default(4202),
 }).unknown()
   .required();
 
