@@ -1,0 +1,34 @@
+# Kubernetes commands
+
+minikube start --vm-driver=<driver_name>            # Starting minikube wiht specific vm driver
+minikube status                                     # Getting status
+minikube stop                                       # Stopping
+minikube delete                                     # Clear local state
+
+# Kubernetes terminology
+
+- Cluster
+- Cluster Master
+- Node
+- Pode
+
+## Cluster
+
+A K8s Cluster consists of a Cluster Master and Worker Nodes. 
+
+## Cluster Master
+
+It directs the Worker Nodes. 
+Masters make scheduling decisions, respond to events, implement changes, and monitor the Cluster.
+
+## Node
+
+Node is an abstraction for a machine — either a physical machine or a virtual machine. 
+Node is like a computer server. One or more Pods run on a single Worker Node.
+
+It has following components:
+    - kubelet: Brain for Worker Node. Responsible for everything on the Worker Node.
+    - kube-proxy: Routes connections to the correct Pods. Also performs load balancing across Pods for a Service. Think traffic cop. 
+    - Container Runtime: Downloads images and runs containers. For example, Docker is a Container Runtime. Think Docker.
+
+
