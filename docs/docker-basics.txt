@@ -5,7 +5,7 @@ docker logs <container-id>              # Container logs
 docker stop <container-id>              # Stop container
 docker rm <container-id>                # Removing container
 docker system prune                     # Removing all unused objects
-
+docker push <image-name>                # Pushing image what is built to the Docker hub
 
 # Networking
 

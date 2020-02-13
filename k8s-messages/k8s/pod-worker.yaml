@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod-worker
+  labels:
+    component: messages
+spec:
+  containers:
+    - name: worker
+      image: kat1330/k8s-messages-worker
+      ports:
+        - containerPort: 4202

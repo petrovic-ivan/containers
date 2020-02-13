@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod-api
+  labels:
+    component: messages
+spec:
+  containers:
+    - name: api
+      image: kat1330/k8s-messages-api
+      ports:
+        - containerPort: 4201
