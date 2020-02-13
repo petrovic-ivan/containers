@@ -17,11 +17,11 @@ setTimeout(() => {
             console.log(" [*] Consumer waiting for messages in queue '%s'. To exit press CTRL+C", queue);
 
             channel.consume(queue, function (msg) {
-                console.log(" [x] Received %s", msg.content.toString());
+                console.log(" [x] %s", msg.content.toString());
             }, {
                 noAck: true
             });
         });
     });
 
-}, 5000);
+}, 10000);

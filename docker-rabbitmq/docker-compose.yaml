@@ -6,12 +6,12 @@ services:
         ports:
             - 5672:5672
             - 15672:15672
-  publisher: 
-    build: ./publisher
+  api: 
+    build: ./api
     ports: 
       - "4201:4201"
-  consumer: 
-    build: ./consumer
+  worker: 
+    build: ./worker
     ports: 
       - "4202:4202"
             
