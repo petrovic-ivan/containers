@@ -3,35 +3,34 @@ const amqp = require('amqplib/callback_api');
 async function publish(req, res) {
   if (!req.body.message) res.send(415);
 
-  const data = '<' + new Date().toLocaleDateString() + '> ' + req.body.message;
+  const data = '<' + new Date().toLocaleString() + '> ' + req.body.message;
 
-  amqp.connect('amqp://localhost', function (error0, connection) {
-    if (error0) {
-      throw error0;
-    }
-    connection.createChannel(function (error1, channel) {
-      if (error1) {
-        throw error1;
-      }
+  amqp.connect('amqp://localhost:5672', function (error0, connection) {
+    if (!error0) {
+      connection.createChannel(function (error1, channel) {
+        if (!error1) {
+          const queue = 'node-app';
+          const msg = data;
 
-      const queue = 'node-app';
-      const msg = data;
+          channel.assertQueue(queue, {
+            durable: false
+          });
+          channel.sendToQueue(queue, Buffer.from(msg));
 
-      channel.assertQueue(queue, {
-        durable: false
+          res.send(200);
+        }
       });
-      channel.sendToQueue(queue, Buffer.from(msg));
 
-      console.log(" [x] Sent %s", msg);
-    });
+    } else {
+      res.send(500);
+    }
 
     setTimeout(function () {
       connection.close();
-      process.exit(0);
-    }, 500);
+    }, 2000);
   });
 
-  res.send(200);
+
 }
 
 

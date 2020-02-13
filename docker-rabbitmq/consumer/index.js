@@ -1,10 +1,26 @@
-const config = require('./src/config/config');
-const app = require('./src/config/express');
+const amqp = require('amqplib/callback_api');
 
-if (!module.parent) {
-  app.listen(config.port, () => {
-    console.info(`server started on http://localhost:${config.port} (${config.env})`);
-  });
-}
+amqp.connect('amqp://localhost', function(error0, connection) {
+    if (error0) {
+        throw error0;
+    }
+    connection.createChannel(function(error1, channel) {
+        if (error1) {
+            throw error1;
+        }
 
-module.exports = app;
+        const queue = 'node-app';
+
+        channel.assertQueue(queue, {
+            durable: false
+        });
+
+        console.log(" [*] Consumer waiting for messages in queue '%s'. To exit press CTRL+C", queue);
+
+        channel.consume(queue, function(msg) {
+            console.log(" [x] Received %s", msg.content.toString());
+        }, {
+            noAck: true
+        });
+    });
+});
