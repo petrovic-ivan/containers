@@ -28,7 +28,11 @@ async function publish(req, res) {
 
 }
 
+async function test(req, res) {
+ res.send('Hello from message API.');
+}
 
 module.exports = {
-  publish
+  publish,
+  test
 }
