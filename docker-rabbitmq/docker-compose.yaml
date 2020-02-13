@@ -1,15 +1,17 @@
 version: '3'
 services: 
-  consumer: 
-    build: ./consumer
-    ports: 
-      - "4200:4200"
+  rabbitmq:
+        image: rabbitmq:latest
+        container_name: rabbitmq
+        ports:
+            - 5672:5672
+            - 15672:15672
   publisher: 
     build: ./publisher
     ports: 
       - "4201:4201"
-  rabbitmq: 
-    build: ./rabbitmq
+  consumer: 
+    build: ./consumer
     ports: 
-      - "5672:5672" 
-    restart: always 
+      - "4202:4202"
+            

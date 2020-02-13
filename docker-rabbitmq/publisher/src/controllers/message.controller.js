@@ -1,11 +1,11 @@
 const amqp = require('amqplib/callback_api');
 
 async function publish(req, res) {
-  if (!req.body.message) res.send(415);
+  if (!req.body.message) res.sendStatus(415);
 
   const data = '<' + new Date().toLocaleString() + '> ' + req.body.message;
 
-  amqp.connect('amqp://localhost:5672', function (error0, connection) {
+  amqp.connect('amqp://rabbitmq:5672', function (error0, connection) {
     if (!error0) {
       connection.createChannel(function (error1, channel) {
         if (!error1) {
@@ -17,17 +17,12 @@ async function publish(req, res) {
           });
           channel.sendToQueue(queue, Buffer.from(msg));
 
-          res.send(200);
+          res.sendStatus(200);
         }
       });
-
     } else {
-      res.send(500);
+      res.sendStatus(500);
     }
-
-    setTimeout(function () {
-      connection.close();
-    }, 2000);
   });
 
 
