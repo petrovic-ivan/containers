@@ -5,8 +5,8 @@ metadata:
 spec:
   type: NodePort
   ports:
-    - ports: 3050
-      targetPort: 3000
-      nodePort: 3151
+    - port: 3050 
+      targetPort: 4201
+      nodePort: 31515
   selector:
-    component: messages
+    component: messages-api

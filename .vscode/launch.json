@@ -11,7 +11,7 @@
             "skipFiles": [
                 "<node_internals>/**"
             ],
-            "program": "${workspaceFolder}\\docker-rabbitmq\\api\\index.js"
+            "program": "${workspaceFolder}\\k8s-messages\\api\\index.js"
         },
         {
             "type": "node",
@@ -20,7 +20,7 @@
             "skipFiles": [
                 "<node_internals>/**"
             ],
-            "program": "${workspaceFolder}\\docker-rabbitmq\\worker\\index.js"
+            "program": "${workspaceFolder}\\k8s-messages\\worker\\index.js"
         }
     ]
 }

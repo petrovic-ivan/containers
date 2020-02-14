@@ -3,7 +3,7 @@ kind: Pod
 metadata:
   name: pod-worker
   labels:
-    component: messages
+    component: messages-worker
 spec:
   containers:
     - name: worker

@@ -4,6 +4,11 @@ minikube start --vm-driver=<driver_name>            # Starting minikube wiht spe
 minikube status                                     # Getting status
 minikube stop                                       # Stopping
 minikube delete                                     # Clear local state
+minikube ip                                         # get address of minikube what is used for accessing inside minikube VM
+
+kubectl apply -f <file name>                        # feed config file (.yaml file) to Kubectl 
+kubectl get pods                                    # return status of pods
+kubectl get services                                # return status of services
 
 # Kubernetes terminology
 
@@ -31,4 +36,12 @@ It has following components:
     - kube-proxy: Routes connections to the correct Pods. Also performs load balancing across Pods for a Service. Think traffic cop. 
     - Container Runtime: Downloads images and runs containers. For example, Docker is a Container Runtime. Think Docker.
 
+# YAML
 
+1. kind:                        # represents what kind of object we are creating
+2. spec:                        # 
+    type: NodePort              # represents what kind of sub type we are creating
+    ports:                      
+        - port: 3050            # port which receives requests from other Pod
+          targetPort: 4201      # port to where request will be redirected (Pod port)
+          nodePort: 31515       # port of which receives outside requests

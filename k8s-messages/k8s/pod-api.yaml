@@ -3,7 +3,7 @@ kind: Pod
 metadata:
   name: pod-api
   labels:
-    component: messages
+    component: messages-api
 spec:
   containers:
     - name: api
