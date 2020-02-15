@@ -4,11 +4,16 @@ minikube start --vm-driver=<driver_name>            # Starting minikube wiht spe
 minikube status                                     # Getting status
 minikube stop                                       # Stopping
 minikube delete                                     # Clear local state
-minikube ip                                         # get address of minikube what is used for accessing inside minikube VM
+minikube ip                                         # Get address of minikube what is used for accessing inside minikube VM
+minikube dashboard                                  # Open Kubernetes dashboard in browser
+minikube service <service-name> --url               # Get url off service which can be accessed
 
-kubectl apply -f <file name>                        # feed config file (.yaml file) to Kubectl 
-kubectl get pods                                    # return status of pods
-kubectl get services                                # return status of services
+kubectl apply -f <file name>                        # Feed config file (.yaml file) to Kubectl 
+kubectl get pods                                    # Return status of pods
+kubectl get nodes                                   # Return status of nodes
+kubectl get services                                # Return status of services
+kubectl cluster-info                                # Print cluster info
+
 
 # Kubernetes terminology
 

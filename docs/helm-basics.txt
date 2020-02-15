@@ -3,7 +3,8 @@
 helm get -h                                 # Help
 helm search repo stable 					# Print chardts list
 helm repo update        					# Update repo with charts
-helm install stable/mysql --generate-name	# Installing example chart
+helm install <package name> --name <name>  	# Installing example chart by passing name
 helm ls										# List what using what is released on helm
 helm uninstall <release-name>               # Uninstall release
 helm status <release-name>                  # Get status of specific release
+helm search <release-name>                  # Search for release
