@@ -1,5 +1,6 @@
 # helm commands
 
+helm version --short                        # Get version
 helm get -h                                 # Help
 helm search repo stable 					# Print chardts list
 helm repo update        					# Update repo with charts
@@ -8,3 +9,4 @@ helm ls										# List what using what is released on helm
 helm uninstall <release-name>               # Uninstall release
 helm status <release-name>                  # Get status of specific release
 helm search <release-name>                  # Search for release
+helm init                                                                      

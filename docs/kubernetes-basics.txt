@@ -13,7 +13,9 @@ kubectl get pods                                    # Return status of pods
 kubectl get nodes                                   # Return status of nodes
 kubectl get services                                # Return status of services
 kubectl cluster-info                                # Print cluster info
-
+kubectl get serviceaccounts                         # Get service accounts
+kubectl -n kube-system create serviceaccount <name> # Create service accounts
+kubectl create clusterrolebinding <name>            # Create custom role binding
 
 # Kubernetes terminology
 
