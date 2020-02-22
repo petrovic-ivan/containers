@@ -4,10 +4,11 @@ require('dotenv').config();
 
 const envVarsSchema = Joi.object({
   NODE_ENV: Joi.string()
-    .allow(['development', 'production', 'test', 'provision'])
-    .default('development'),
+    .allow(['development', 'production'])
+    .default(process.env.NODE_ENV),
   SERVER_PORT: Joi.number()
     .default(4201),
+  RABBITMQ_HOST: Joi.string().default(process.env.NODE_ENV === 'development' ? '0.0.0.0' : 'rabbitmq')
 }).unknown()
   .required();
 
@@ -19,7 +20,7 @@ if (error) {
 const config = {
   env: envVars.NODE_ENV,
   port: envVars.SERVER_PORT,
-  RABBITMQ_HOST: 'dsfsdfsdfsd'
+  rabbitmq: envVars.RABBITMQ_HOST
 };
 
 console.log('HERE IS envVars.NODE_ENV: ', envVars.NODE_ENV);

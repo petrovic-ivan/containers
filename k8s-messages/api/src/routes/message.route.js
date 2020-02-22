@@ -8,6 +8,9 @@ const router = express.Router();
 router.route('/publish')
   .post(asyncHandler(messageCtrl.publish));
 
+router.route('/read')
+  .get(asyncHandler(messageCtrl.read));
+
 router.route('/')
   .get(asyncHandler(messageCtrl.test));
 

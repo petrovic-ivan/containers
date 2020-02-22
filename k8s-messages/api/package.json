@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "license": "Ivan Petrovic",
   "scripts": {
-    "start": "nodemon --inspect index.js",
-    "start-prd": "node index.js",
+    "start": "NODE_ENV=development nodemon --inspect index.js",
+    "start-prd": "NODE_ENV=production node index.js",
     "test": ""
   },
   "private": true,

@@ -11,7 +11,10 @@
             "skipFiles": [
                 "<node_internals>/**"
             ],
-            "program": "${workspaceFolder}\\k8s-messages\\api\\index.js"
+            "program": "${workspaceFolder}\\k8s-messages\\api\\index.js",
+            "env": {
+                "NODE_ENV": "development"
+            },
         },
         {
             "type": "node",

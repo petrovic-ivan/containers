@@ -10,8 +10,8 @@ services:
     build: ./api
     ports: 
       - "4201:4201"
-  worker: 
-    build: ./worker
-    ports: 
-      - "4202:4202"
+  # worker: 
+  #   build: ./worker
+  #   ports: 
+  #     - "4202:4202"
             
