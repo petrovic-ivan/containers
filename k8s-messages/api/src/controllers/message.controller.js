@@ -1,5 +1,7 @@
+const config = require('../config/config');
 const amqp = require('amqplib/callback_api');
-const rabbit = 'amqp://0.0.0.0:5672';
+
+const rabbit = `amqp://${config.rabbitmq}:5672`;
 
 async function publish(req, res) {
   if (!req.body.message) res.sendStatus(415);
