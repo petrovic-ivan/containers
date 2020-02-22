@@ -7,7 +7,7 @@ docker rm <container-id>                # Removing container
 docker system prune                     # Removing all unused objects
 docker push <image-name>                # Pushing image what is built to the Docker hub
 
-docker-compose --build up               # Run containers after images are built.
+docker-compose up --build               # Run containers after images are built.
 # Networking
 
 ## Ports 
