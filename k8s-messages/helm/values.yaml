@@ -1,0 +1,9 @@
+# Release-wide Values
+replicas: 3
+version: 'latest'
+
+# Service Specific Values
+rabbitmq:
+  image: rabbitmq
+api:
+  image: kat1330/k8s-messages-api

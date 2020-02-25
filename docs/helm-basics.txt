@@ -9,4 +9,4 @@ helm ls										# List what using what is released on helm
 helm uninstall <release-name>               # Uninstall release
 helm status <release-name>                  # Get status of specific release
 helm search <release-name>                  # Search for release
-helm init                                                                      
+helm create <chart-name>                    # Creating chart                                                   
