@@ -9,6 +9,7 @@ async function publish(req, res) {
   const data = '<' + new Date().toLocaleString() + '> ' + req.body.message;
 
   amqp.connect(rabbit, function (error0, connection) {
+    
     if (!error0) {
       connection.createChannel(function (error1, channel) {
         if (!error1) {
@@ -21,9 +22,12 @@ async function publish(req, res) {
           channel.sendToQueue(queue, Buffer.from(msg));
 
           res.sendStatus(200);
+        } else {
+          console.logError(JSON.stringify(error1));
         }
       });
     } else {
+      console.logError(JSON.stringify(error0));
       res.sendStatus(500);
     }
   });
@@ -44,8 +48,12 @@ async function read(req, res) {
           }, function (err, msg) {
             if (msg) res.send(msg.content.toString());
           });
+        } else {
+          console.logError(JSON.stringify(error1));
         }
       });
+    } else {
+      console.logError(JSON.stringify(error0));
     }
   });
 

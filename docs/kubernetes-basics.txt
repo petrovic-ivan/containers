@@ -16,6 +16,7 @@ kubectl cluster-info                                # Print cluster info
 kubectl get serviceaccounts                         # Get service accounts
 kubectl -n kube-system create serviceaccount <name> # Create service accounts
 kubectl create clusterrolebinding <name>            # Create custom role binding
+kubectl exec -it <pod-name> -- /bin/bash            # Opening bash for running pod
 
 # Kubernetes terminology
 

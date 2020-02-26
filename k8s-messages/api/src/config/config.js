@@ -8,7 +8,7 @@ const envVarsSchema = Joi.object({
     .default(process.env.NODE_ENV),
   SERVER_PORT: Joi.number()
     .default(4201),
-  RABBITMQ_HOST: Joi.string().default(process.env.NODE_ENV === 'development' ? '0.0.0.0' : 'rabbitmq')
+  RABBITMQ_HOST: Joi.string().default(process.env.NODE_ENV === 'development' ? '0.0.0.0' : 'k8s-messages-rabbitmq')
 }).unknown()
   .required();
 
