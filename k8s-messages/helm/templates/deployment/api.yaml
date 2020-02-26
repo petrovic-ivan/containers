@@ -6,7 +6,7 @@ metadata:
     app: k8s-messages-api
   namespace: default
 spec:
-  replicas: {{ .Values.replicas }}
+  replicas: {{ .Values.api.replicas }}
   selector:
     matchLabels:
       app: k8s-messages-api
@@ -20,6 +20,12 @@ spec:
       labels:
         app: k8s-messages-api
     spec:
+      limits:
+      - default:
+          memory: 512Mi
+        defaultRequest:
+          memory: 256Mi
+        type: Container
       containers:
       - image: {{ .Values.api.image }}:{{ .Values.version }}
         imagePullPolicy: Always
