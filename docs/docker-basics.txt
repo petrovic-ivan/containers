@@ -1,4 +1,4 @@
-docker build -t <image-name>            # Build docker image with image name
+docker build -t <image-name> .          # Build docker image with image name from current folder
 docker run -p 80:3000 <image-name>      # Running docker image with defined ports
 docker ps                               # List running containers
 docker logs <container-id>              # Container logs

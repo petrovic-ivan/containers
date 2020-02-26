@@ -23,11 +23,11 @@ async function publish(req, res) {
 
           res.sendStatus(200);
         } else {
-          console.logError(JSON.stringify(error1));
+          console.logError('error1: ' + JSON.stringify(error1));
         }
       });
     } else {
-      console.logError(JSON.stringify(error0));
+      console.logError('error0: ' + JSON.stringify(error0));
       res.sendStatus(500);
     }
   });
@@ -49,11 +49,11 @@ async function read(req, res) {
             if (msg) res.send(msg.content.toString());
           });
         } else {
-          console.logError(JSON.stringify(error1));
+          console.logError('error1: ' + JSON.stringify(error1));
         }
       });
     } else {
-      console.logError(JSON.stringify(error0));
+      console.logError('error0: ' + JSON.stringify(error0));
     }
   });
 
