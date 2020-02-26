@@ -15,17 +15,17 @@ spec:
       maxSurge: 25%
       maxUnavailable: 25%
     type: RollingUpdate
+  limits:
+  - default:
+      memory: 512Mi
+    defaultRequest:
+      memory: 256Mi
+    type: Container
   template:
     metadata:
       labels:
         app: k8s-messages-rabbitmq
     spec:
-      limits:
-      - default:
-          memory: 512Mi
-        defaultRequest:
-          memory: 256Mi
-        type: Container
       containers:
       - image: {{ .Values.rabbitmq.image }}:{{ .Values.version }}
         imagePullPolicy: Always
