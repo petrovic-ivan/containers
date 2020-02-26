@@ -15,12 +15,6 @@ spec:
       maxSurge: 25%
       maxUnavailable: 25%
     type: RollingUpdate
-  limits:
-  - default:
-      memory: 512Mi
-    defaultRequest:
-      memory: 256Mi
-    type: Container  
   template:
     metadata:
       labels:
