@@ -11,4 +11,5 @@ helm ls										            # List what using what is released on helm
 helm uninstall <release-name>                           # Uninstall release
 helm status <release-name>                              # Get status of specific release
 helm search <release-name>                              # Search for release
-helm create <chart-name>                                # Creating chart                                                   
+helm create <chart-name>                                # Creating chart      
+helm package <helm-folder>                              # Create helm package                
