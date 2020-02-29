@@ -20,6 +20,9 @@ kubectl exec -it <pod-name> -- /bin/bash            # Opening bash for running p
 kubectl describe <object-type>s                     # Get details about specific type
 kubectl get pods [pod-name-here] -n [namespace] -o jsonpath='{.spec.containers[*].name}* # Get list of containers inside pod
 kubectl delete <object-type> <object-name>          # Deleting objects
+kubectl cluster-info                                # Display claster config
+kubectl config view                                 # Display kubectl config file
+kubectl config view                                 # Display kubectl config file
 
 # Kubernetes terminology
 
