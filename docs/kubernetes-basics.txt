@@ -1,5 +1,9 @@
 # Kubernetes commands
 
+kubectl get pods (nodes, deployments...)        # Get all pods (nodes, deployments) on kubernetes cluster
+kubectl get pods -l                             # Get pods filtered by label name
+kubectl describe deployment (node, pod) <name>  # Get details about deployment
+
 minikube start --vm-driver=<driver_name>            # Starting minikube wiht specific vm driver
 minikube status                                     # Getting status
 minikube stop                                       # Stopping

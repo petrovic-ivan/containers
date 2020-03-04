@@ -1,9 +1,28 @@
+# Setup
+    - Download and install
+    - Set stable repository
+    - Configure bash completition for helm
+
+# Deploy with helm
+    - 
+
+
 # helm commands
 
-helm get -h                                 # Help
-helm search repo stable 					# Print chardts list
-helm repo update        					# Update repo with charts
-helm install stable/mysql --generate-name	# Installing example chart
-helm ls										# List what using what is released on helm
-helm uninstall <release-name>               # Uninstall release
-helm status <release-name>                  # Get status of specific release
+helm get -h                                         # Help
+helm search repo stable 					        # Print chardts list
+helm search repo <key-word>                         # Search repo by key word
+helm repo update        					        # Update repo with charts
+helm ls										        # List what using what is released on helm
+helm install stable/mysql --generate-name	        # Installing example chart
+helm uninstall <release-name>                       # Uninstall release
+helm status <release-name>                          # Get status of specific release
+helm history <release-name>                         # Get history of deployments
+helm repo update                                    # Update helm repo with new charts
+helm create <chart-name>                            # Creating new chart
+helm install --debug --dry-run <name> <chart-loc>   # Validating chart template without deploying
+helm upgrade <name> <chart-loc>                     # Redeploy chart according to new state
+helm rollback <release-name> <revision-number>      # Rolling back relaease to specific revision
+
+
+
