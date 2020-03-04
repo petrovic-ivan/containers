@@ -1,0 +1,61 @@
+# Kubernetes commands
+
+minikube start --vm-driver=<driver_name>            # Starting minikube wiht specific vm driver
+minikube status                                     # Getting status
+minikube stop                                       # Stopping
+minikube delete                                     # Clear local state
+minikube ip                                         # Get address of minikube what is used for accessing inside minikube VM
+minikube dashboard                                  # Open Kubernetes dashboard in browser
+minikube service <service-name> --url               # Get url off service which can be accessed
+
+kubectl apply -f <file name>                        # Feed config file (.yaml file) to Kubectl 
+kubectl get pods                                    # Return status of pods
+kubectl get nodes                                   # Return status of nodes
+kubectl get services                                # Return status of services
+kubectl cluster-info                                # Print cluster info
+kubectl get serviceaccounts                         # Get service accounts
+kubectl -n kube-system create serviceaccount <name> # Create service accounts
+kubectl create clusterrolebinding <name>            # Create custom role binding
+kubectl exec -it <pod-name> -- /bin/bash            # Opening bash for running pod
+kubectl describe <object-type>s                     # Get details about specific type
+kubectl get pods [pod-name-here] -n [namespace] -o jsonpath='{.spec.containers[*].name}* # Get list of containers inside pod
+kubectl delete <object-type> <object-name>          # Deleting objects
+kubectl cluster-info                                # Display claster config
+kubectl config view                                 # Display kubectl config file
+kubectl config view                                 # Display kubectl config file
+
+# Kubernetes terminology
+
+- Cluster
+- Cluster Master
+- Node
+- Pode
+
+## Cluster
+
+A K8s Cluster consists of a Cluster Master and Worker Nodes. 
+
+## Cluster Master
+
+It directs the Worker Nodes. 
+Masters make scheduling decisions, respond to events, implement changes, and monitor the Cluster.
+
+## Node
+
+Node is an abstraction for a machine — either a physical machine or a virtual machine. 
+Node is like a computer server. One or more Pods run on a single Worker Node.
+
+It has following components:
+    - kubelet: Brain for Worker Node. Responsible for everything on the Worker Node.
+    - kube-proxy: Routes connections to the correct Pods. Also performs load balancing across Pods for a Service. Think traffic cop. 
+    - Container Runtime: Downloads images and runs containers. For example, Docker is a Container Runtime. Think Docker.
+
+# YAML
+
+1. kind:                        # represents what kind of object we are creating
+2. spec:                        # 
+    type: NodePort              # represents what kind of sub type we are creating
+    ports:                      
+        - port: 3050            # port which receives requests from other Pod
+          targetPort: 4201      # port to where request will be redirected (Pod port)
+          nodePort: 31515       # port of which receives outside requests

@@ -1,0 +1,14 @@
+https://eksworkshop.com/010_introduction/
+
+# Creating Cloud9 for managing eks
+
+    - Create environment
+    - Create Role with appropriate rights. It should be EC2 role dedicated to EKS serivice and it should allows EKS to manage clusters on your behalf
+    - Attach role to Cloud9 instance
+    - Configure aws cli on Cloud9 with account id and aws region
+    - Create SSH in CLoud9. This will be used for worker node instances
+
+
+# AWS Security Token Service (STS)
+
+aws sts get-caller-identity                         # Get caller identity

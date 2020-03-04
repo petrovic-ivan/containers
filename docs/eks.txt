@@ -1,0 +1,6 @@
+https://eksworkshop.com/010_introduction/
+
+# eksctl commands
+
+eksctl create cluster <params>                             # Creating kube cluster with adding inline params
+eksctl create cluster -f <yaml-file>                       # Create cluster from yaml file

@@ -1,10 +1,10 @@
 {
-  "name": "consumer",
+  "name": "worker",
   "version": "1.0.0",
   "license": "Ivan Petrovic",
   "scripts": {
     "start": "nodemon --inspect index.js",
-    "start-prd": "SET NODE_ENV=production & node index.js",
+    "start-prd": "node index.js",
     "test": ""
   },
   "private": true,

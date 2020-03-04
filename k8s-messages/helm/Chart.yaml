@@ -1,0 +1,13 @@
+apiVersion: 0.1.0
+name: k8s-messages
+version: 2
+description: Sample helm package.
+type: application
+keywords:
+  - RabbitMQ NodeJS
+home: The URL of this project's home page (optional)
+sources:
+  - A list of URLs to source code for this project (optional)
+icon: A URL to an SVG or PNG image to be used as an icon (optional).
+appVersion: The version of the app that this contains (optional). This needn't be SemVer.
+deprecated: false

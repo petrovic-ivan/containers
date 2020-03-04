@@ -7,20 +7,23 @@
         {
             "type": "node",
             "request": "launch",
-            "name": "RabbitMQ Publisher",
+            "name": "RabbitMQ API",
             "skipFiles": [
                 "<node_internals>/**"
             ],
-            "program": "${workspaceFolder}\\docker-rabbitmq\\publisher\\index.js"
+            "program": "${workspaceFolder}\\k8s-messages\\api\\index.js",
+            "env": {
+                "NODE_ENV": "development"
+            },
         },
         {
             "type": "node",
             "request": "launch",
-            "name": "RabbitMQ Consumer",
+            "name": "RabbitMQ Worker",
             "skipFiles": [
                 "<node_internals>/**"
             ],
-            "program": "${workspaceFolder}\\docker-rabbitmq\\consumer\\index.js"
+            "program": "${workspaceFolder}\\k8s-messages\\worker\\index.js"
         }
     ]
 }

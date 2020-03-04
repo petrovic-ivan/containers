@@ -4,5 +4,5 @@ COPY package*.json ./
 RUN npm install
 RUN apt-get update
 COPY . .
-EXPOSE 4201
+EXPOSE 4202
 CMD [ "npm", "run", "start-prd" ]

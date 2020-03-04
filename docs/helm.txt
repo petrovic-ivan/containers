@@ -1,0 +1,16 @@
+# helm commands
+
+helm version --short                                    # Get version
+helm get -h                                             # Help
+helm search repo stable 					            # Print chardts list
+helm repo update        					            # Update repo with charts
+helm install <package name> --name <name>  	            # Installing example chart by passing name
+helm install --debug --dry-run <package-name> <path>    # Validating templates
+helm install <release-name> <package-name>              # Install release from package
+helm upgrade <package-name> <path>                      # Validating templates
+helm ls										            # List what using what is released on helm
+helm uninstall <release-name>                           # Uninstall release
+helm status <release-name>                              # Get status of specific release
+helm search <release-name>                              # Search for release
+helm create <chart-name>                                # Creating chart      
+helm package <helm-folder>                              # Create helm package                
