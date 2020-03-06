@@ -9,3 +9,13 @@ nodeGroups:
     desiredCapacity: 1
     ssh:
       publicKeyName: eks-ivan-keypair
+  # - name: node-2
+  #   minSize: 3
+  #   maxSize: 5
+  #   instanceDistribution:
+  #     maxPrice: 0.2
+  #     instanceType: ["t2.small", "t3.small"]
+  #     onDemandBaseCapacity: 0
+  #     onDemandPercentageAboveBaseCapacity: 50
+  #   ssh:
+  #     publicKeyName: eks-ivan-keypair

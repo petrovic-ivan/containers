@@ -2,5 +2,10 @@ https://eksworkshop.com/010_introduction/
 
 # eksctl commands
 
-eksctl create cluster <params>                             # Creating kube cluster with adding inline params
-eksctl create cluster -f <yaml-file>                       # Create cluster from yaml file
+eksctl create cluster <params>                                                          # Creating kube cluster with adding inline params
+eksctl create cluster -f <yaml-file>                                                    # Create cluster from yaml file
+eksctl scale nodegroup --cluster=<cluster-name> --nodes=<amount> --name=<group-name>    # Scale node group to specific amount of nodes
+eksctl create nodegroup --config-file=<yaml-file> --include=<group-name>                # Scale node group to specific amount of nodes from yaml file
+eksctl delete nodegroup --config-file=<yaml-file> --include=<group-name> --approve      # Deleting node
+
+eksctl get nodegroup --cluster <cluster-name>
