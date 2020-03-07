@@ -7,5 +7,6 @@ eksctl create cluster -f <yaml-file>                                            
 eksctl scale nodegroup --cluster=<cluster-name> --nodes=<amount> --name=<group-name>    # Scale node group to specific amount of nodes
 eksctl create nodegroup --config-file=<yaml-file> --include=<group-name>                # Scale node group to specific amount of nodes from yaml file
 eksctl delete nodegroup --config-file=<yaml-file> --include=<group-name> --approve      # Deleting node
+eksctl utils update-cluster-logging --config-file <yaml-file> --approve                 # Update cluster logging e.g. cloud watch
 
 eksctl get nodegroup --cluster <cluster-name>

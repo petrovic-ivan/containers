@@ -19,3 +19,6 @@ nodeGroups:
   #     onDemandPercentageAboveBaseCapacity: 50
   #   ssh:
   #     publicKeyName: eks-ivan-keypair
+cloudWatch:
+  clusterLogging:
+    enableTypes: ["*", "audit", "authenticator"]

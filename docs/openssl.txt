@@ -1,0 +1,4 @@
+# OpenSSL commands
+
+openssl version -a                                                                          # Display version
+openssl rsa -in <private-key-file-name (.pem)> -pubout > <public-key-filename (.pub)>       # Read private key file and save public kay into separate file

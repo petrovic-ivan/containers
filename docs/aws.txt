@@ -11,4 +11,5 @@ https://eksworkshop.com/010_introduction/
 
 # AWS Security Token Service (STS)
 
+aws configure                                       # Get set config
 aws sts get-caller-identity                         # Get caller identity
