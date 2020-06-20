@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: core-org-config
+  labels:
+    app: core-org-config
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: core-org-config
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: core-org-config
+    spec:
+      containers:
+      - name: coc
+        image: kat1330/core-org-config
+        ports:
+        - containerPort: 8080
+          protocol: TCP

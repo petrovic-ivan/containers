@@ -13,4 +13,11 @@ helm uninstall <release-name>                           # Uninstall release
 helm status <release-name>                              # Get status of specific release
 helm search <release-name>                              # Search for release
 helm create <chart-name>                                # Creating chart      
-helm package <helm-folder>                              # Create helm package                
+helm package <helm-folder>                              # Create helm package    
+
+
+Basic commands to start helm
+1. helm create <chart-name>                                # Creating chart  
+2. helm package <helm-folder>                              # Create helm package   
+3. helm install k8s-test k8s-messages-2.tgz                # Deploying package to Kubernetes
+4. helm uninstall k8s-test

@@ -17,7 +17,7 @@ kubectl get serviceaccounts                         # Get service accounts
 kubectl -n kube-system create serviceaccount <name> # Create service accounts
 kubectl create clusterrolebinding <name>            # Create custom role binding
 kubectl exec -it <pod-name> -- /bin/bash            # Opening bash for running pod
-kubectl describe <object-type>s                     # Get details about specific type
+kubectl describe <object-type>                      # Get details about specific type
 kubectl get pods [pod-name-here] -n [namespace] -o jsonpath='{.spec.containers[*].name}* # Get list of containers inside pod
 kubectl delete <object-type> <object-name>                  # Deleting objects
 kubectl cluster-info                                        # Display claster config
