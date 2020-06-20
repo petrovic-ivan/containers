@@ -58,6 +58,6 @@ It has following components:
 2. spec:                        # 
     type: NodePort              # represents what kind of sub type we are creating
     ports:                      
-        - port: 3050            # port which receives requests from other Pod
+        - port: 3050            # port on service which receives requests from other Pods
           targetPort: 4201      # port to where request will be redirected (Pod port)
           nodePort: 31515       # port of which receives outside requests
