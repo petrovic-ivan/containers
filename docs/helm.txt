@@ -2,19 +2,24 @@
 
 helm version --short                                    # Get version
 helm get -h                                             # Help
-helm search repo stable 					            # Print chardts list
+
 helm repo update        					            # Update repo with charts
+helm repo add [NAME] [URL] [flags]                      # Add repo
+helm repo list                                          # List all repos
+helm search repo [keyword] 					            # Search charts in repos
+
+helm create <chart-name>                                # Creating chart 
+helm package <helm-folder>                              # Create helm package  
+
 helm install <package name> --name <name>  	            # Installing example chart by passing name
 helm install --debug --dry-run <package-name> <path>    # Validating templates
 helm install <release-name> <package-name>              # Install release from package
 helm upgrade <package-name> <path>                      # Validating templates
-helm ls										            # List what using what is released on helm
 helm uninstall <release-name>                           # Uninstall release
 helm status <release-name>                              # Get status of specific release
 helm search <release-name>                              # Search for release
-helm create <chart-name>                                # Creating chart      
-helm package <helm-folder>                              # Create helm package    
-
+helm ls										            # List what using what is released on helm
+helm install --name elasticsearch elastic/elasticsearch --set nodeSelector."beta\.kubernetes\.io/os"=linux          # Installing elasticsearch chart but selecting specific node with node selector.
 
 Basic commands to start helm
 1. helm create <chart-name>                                # Creating chart  

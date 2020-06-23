@@ -13,3 +13,4 @@ https://eksworkshop.com/010_introduction/
 
 aws configure                                       # Get set config
 aws sts get-caller-identity                         # Get caller identity
+aws eks list-clusters                               # List EKS clusters
