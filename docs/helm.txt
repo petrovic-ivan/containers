@@ -19,7 +19,12 @@ helm uninstall <release-name>                           # Uninstall release
 helm status <release-name>                              # Get status of specific release
 helm search <release-name>                              # Search for release
 helm ls										            # List what using what is released on helm
-helm install --name elasticsearch elastic/elasticsearch --set nodeSelector."beta\.kubernetes\.io/os"=linux          # Installing elasticsearch chart but selecting specific node with node selector.
+
+# Installing elasticsearch chart but selecting specific node with node selector.
+helm install 
+    --name elasticsearch elastic/elasticsearch 
+    --set nodeSelector."beta\.kubernetes\.io/os"=linux          
+
 
 Basic commands to start helm
 1. helm create <chart-name>                                # Creating chart  

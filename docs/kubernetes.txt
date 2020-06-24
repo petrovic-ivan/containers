@@ -15,23 +15,26 @@ kubectl get pods                                    # Return status of pods
 kubectl get nodes                                   # Return status of nodes
 kubectl get services                                # Return status of services
 
-kubectl get serviceaccounts                         
 # Get service accounts
+kubectl get serviceaccounts                         
 
-kubectl -n kube-system create serviceaccount <name> 
 # Create service accounts
+kubectl -n kube-system create serviceaccount <name> 
 
-kubectl create clusterrolebinding <name>            
 # Create custom role binding
+kubectl create clusterrolebinding <name>    
 
-kubectl exec -it <pod-name> -- /bin/bash            
 # Opening bash for running pod
+kubectl exec -it <pod-name> -- /bin/bash            
 
-kubectl describe <object-type>                      
 # Get details about specific type
+kubectl describe <object-type>                      
 
-kubectl get pods [pod-name-here] -n [namespace] -o jsonpath='{.spec.containers[*].name}* 
 # Get list of containers inside pod
+kubectl get pods [pod-name-here] 
+    -n [namespace] 
+    -o jsonpath='{.spec.containers[*].name}* 
+
 
 ### Cluster commands
 kubectl cluster-info                                        # Display claster config

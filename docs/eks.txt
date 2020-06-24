@@ -1,26 +1,45 @@
 https://eksworkshop.com/010_introduction/
 
-# eksctl commands
+### eksctl commands
 
-1. eksctl create cluster <params>                 
 # Creating kube cluster with adding inline params
+eksctl create cluster <params>                 
 
-2. eksctl create cluster -f <yaml-file>           
 # Create cluster from yaml file
+eksctl create cluster -f <yaml-file>           
 
-3. eksctl scale nodegroup --cluster=<cluster-name> --nodes=<amount> --name=<group-name>    
-# Scale node group to specific amount of nodes
-
-4. eksctl create nodegroup --config-file=<yaml-file> --include=<group-name>                
-# Scale node group to specific amount of nodes from yaml file
-
-5. eksctl delete nodegroup --config-file=<yaml-file> --include=<group-name> --approve      
-# Deleting node
-
-6. eksctl utils update-cluster-logging --config-file <yaml-file> --approve                 
 # Update cluster logging e.g. cloud watch
+eksctl utils update-cluster-logging 
+    --config-file <yaml-file> 
+    --approve     
 
-7. eksctl create nodegroup --cluster uswe2-soteam-eks-test-cluster-205-115 --version auto --name linux-workers --node-type t3.medium --node-ami auto --nodes 3 --nodes-min 1 --nodes-max 4
-# Create node
+# Create node different parameters
+eksctl create nodegroup 
+    --cluster uswe2-soteam-eks-test-cluster-205-115 
+    --version auto 
+    --name linux-workers 
+    --node-type t3.medium 
+    --node-ami auto 
+    --nodes 3 
+    --nodes-min 1 
+    --nodes-max 4
 
+# Create specific amount of nodes
+eksctl scale nodegroup 
+    --cluster=<cluster-name> 
+    --nodes=<amount> 
+    --name=<group-name>    
+
+# Create node from yaml file
+eksctl create nodegroup 
+    --config-file=<yaml-file> 
+    --include=<group-name>  
+
+# Deleting node
+eksctl delete nodegroup 
+    --config-file=<yaml-file> 
+    --include=<group-name> 
+    --approve  
+
+# List nodes from cluster
 eksctl get nodegroup --cluster <cluster-name>
