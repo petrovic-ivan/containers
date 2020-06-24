@@ -9,7 +9,7 @@ helm repo list                                          # List all repos
 helm search repo [keyword] 					            # Search charts in repos
 
 helm create <chart-name>                                # Creating chart 
-helm package <helm-folder>                              # Create helm package  
+helm package <helm-folder> -d <destination>             # Create helm package  
 
 helm install <package name> --name <name>  	            # Installing example chart by passing name
 helm install --debug --dry-run <package-name> <path>    # Validating templates
