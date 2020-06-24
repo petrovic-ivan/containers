@@ -20,4 +20,7 @@ https://eksworkshop.com/010_introduction/
 6. eksctl utils update-cluster-logging --config-file <yaml-file> --approve                 
 # Update cluster logging e.g. cloud watch
 
+7. eksctl create nodegroup --cluster uswe2-soteam-eks-test-cluster-205-115 --version auto --name linux-workers --node-type t3.medium --node-ami auto --nodes 3 --nodes-min 1 --nodes-max 4
+# Create node
+
 eksctl get nodegroup --cluster <cluster-name>

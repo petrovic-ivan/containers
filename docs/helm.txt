@@ -26,3 +26,9 @@ Basic commands to start helm
 2. helm package <helm-folder>                              # Create helm package   
 3. helm install k8s-test k8s-messages-2.tgz                # Deploying package to Kubernetes
 4. helm uninstall k8s-test
+
+Basic command to start with other repo
+1. helm repo add [NAME] [URL] [flags]                      # Add repo
+2. helm repo update        					               # Update repo with charts 
+3. helm install eventstore eventstore/eventstore           # Deploying package to Kubernetes
+4. helm uninstall eventstore                               # Uninstaling chart
