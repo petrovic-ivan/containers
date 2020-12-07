@@ -1,13 +1,15 @@
-docker build -t <image-name> .          # Build docker image with image name from current folder
-docker push <image-name>                # Pushing image what is built to the Docker hub
-docker run -p 80:3000 <image-name>      # Running docker image with defined ports
-docker ps                               # List running containers
-docker logs <container-id>              # Container logs
-docker stop <container-id>              # Stop container
-docker rm <container-id>                # Removing container
-docker system prune                     # Removing all unused objects
+docker build -t <image-name> .                                      # Build docker image with image name from current folder
+docker push <image-name>                                            # Pushing image what is built to the Docker hub
+docker run -p 80:3000 <image-name>                                  # Running docker image with defined ports
+docker run -p 80:3000 --env-file core-oreg-config.env <image-name>  # Start container with environemt variable files.
+docker ps                                                           # List running containers
+docker logs <container-id>                                          # Container logs
+docker stop <container-id>                                          # Stop container
+docker rm <container-id>                                            # Removing container
+docker system prune                                                 # Removing all unused objects
 
-docker-compose up --build               # Run containers after images are built.
+docker-compose up --build                                           # Run containers after images are built.
+
 # Networking
 
 ## Ports 
