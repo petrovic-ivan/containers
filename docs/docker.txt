@@ -1,6 +1,7 @@
 docker build -t <image-name> .                                      # Build docker image with image name from current folder
 docker push <image-name>                                            # Pushing image what is built to the Docker hub
 docker run -p 80:3000 <image-name>                                  # Running docker image with defined ports
+docker run -p 80:3000 <image-name> --name <container name>          # Running docker image with defined ports and container name
 docker run -p 80:3000 --env-file core-oreg-config.env <image-name>  # Start container with environemt variable files.
 docker ps                                                           # List running containers
 docker logs <container-id>                                          # Container logs
