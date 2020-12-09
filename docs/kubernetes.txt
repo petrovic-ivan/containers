@@ -15,6 +15,14 @@ kubectl get pods                                    # Return status of pods
 kubectl get nodes                                   # Return status of nodes
 kubectl get services                                # Return status of services
 
+# Get pod's address:
+1. Get list of nodes with details: kubectl get nodes -o wide                           
+2. Find node where pod lives.
+3. If you are under private Subnet take Internal IP.
+4. Get list of services: kubectl get services -o wide
+5. Find corresponding service and take port number.
+6. Use nodes's Internal IP and services's Port Number.
+
 # Get service accounts
 kubectl get serviceaccounts                         
 
