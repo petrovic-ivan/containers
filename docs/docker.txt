@@ -10,6 +10,7 @@ docker rm <container-id>                                            # Removing c
 docker system prune                                                 # Removing all unused objects
 docker exec -it <mycontainer> bash                                  # Shell into container
 docker-compose up --build                                           # Run containers after images are built.
+docker inspect <container>                                          # Inspect running container
 
 # Networking
 
